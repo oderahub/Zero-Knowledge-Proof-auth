@@ -1,0 +1,50 @@
+
+
+
+Zero-Knowledge Proof (ZKP) Authentication System
+This project demonstrates a simple authentication system based on Zero-Knowledge Proofs (ZKP), 
+specifically using the Fiat-Shamir heuristic. The system allows users to register with a password and 
+authenticate themselves without revealing the password to the server, which provides security and privacy benefits.
+
+Background
+A Zero-Knowledge Proof (ZKP) is a cryptographic method where one party (the prover) can prove to another (the verifier) 
+that they know a secret without actually disclosing it. This approach is widely applicable in secure authentication, as the 
+verifier never learns the prover’s actual password or secret, preventing unauthorized access if the verifier’s data is compromised.
+
+This project implements a ZKP authentication system using:
+
+Prime Number (p) and Generator (g) to define a secure mathematical group.
+Challenge-Response Mechanism to ensure unique, verifiable proof for each login session.
+Implementation Overview
+The system uses modular arithmetic and bitwise operations to securely generate and verify proof during the authentication process. 
+Here’s an outline of the steps involved:
+
+Registration: A user registers with a password, which is hashed and transformed into a public key.
+Login (Authentication):
+The user generates a commitment and sends it to the server.
+The server issues a challenge to the user.
+The user responds with a proof based on the challenge and their secret.
+Verification: The server verifies the response using modular arithmetic, confirming that the user knows the secret without knowing the secret itself.
+Key Components
+1. Prime Number 
+   𝑝
+p and Generator 
+𝑔
+g
+p: A large prime number that defines the finite group in which calculations are performed. For enhanced security, a large prime number should be used.
+g: The generator of the group, which allows both the server and client to perform verifiable calculations.
+2. Modular Exponentiation
+modExp Function: This function calculates 
+base
+exp
+m
+o
+d
+ 
+ 
+mod
+base 
+exp
+ modmod, a secure method for computing large numbers, which is crucial for cryptographic security in ZKP.
+3. Challenge-Response Protocol
+A unique challenge-response process between the client and server ensures that each login attempt is verifiable yet unrepeatable, providing security against replay attacks. The challenge-response mechanism requires the client to respond dynamically to a random challenge from the server, making each authentication unique.
