@@ -1,8 +1,7 @@
 class ZKPLoginSystem {
     constructor() {
-        // Use a large prime and a primitive root modulo p
-        this.p = 23; // A small prime for example; in practice, use a large prime
-        this.g = 5;  // A generator for the group
+        this.p = 23;
+        this.g = 5;  
         this.userDatabase = {}; // Store usernames and public keys
     }
 
