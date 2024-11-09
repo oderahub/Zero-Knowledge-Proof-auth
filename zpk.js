@@ -7,7 +7,7 @@ class ZKPLoginSystem {
 
     // Helper function to compute modular exponentiation (base^exp % mod)
     modExp(base, exp, mod) {
-        let result = 0;
+        let result = 1;
         base = base % mod;
         while (exp > 0) {
             if (exp % 2 === 1) result = (result * base) % mod;

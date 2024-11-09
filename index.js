@@ -10,12 +10,13 @@ if(zeroBasedIndex < 0 || zeroBasedIndex >= sortedList.length) {
   throw new Error ("invalid index")
 }
 
-return sortedList[zeroBasedIndex]
+return zeroBasedIndex + 1
 }
 
+console.log(getItemAtIndex(1000000000, 9500678))
 
 
 
-// Direct Access: By subtracting 1 from the target index, you convert it to a zero-based index, which is exactly what JavaScript uses for array indexing.
+// This solution efficiently retrieves any item from a hypothetical large sorted list without storing the list in memory.
 // Linear Time Complexity: This solution has a time complexity of O(1), which means it performs a constant number of operations regardless of the input size.
 // Efficiency: Given that the list is sorted and sequential, this method avoids the need for any complex algorithms like binary search.
