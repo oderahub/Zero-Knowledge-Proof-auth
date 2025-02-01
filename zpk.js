@@ -26,7 +26,6 @@ class ZKPLoginSystem {
     }
 
     // Simple hash function (hash imitation using char codes) 
-    // note this is for example purpose of this task.
     simpleHash(input) {
         return input.split('').reduce((hash, char) => {
             return ((hash << 5) - hash + char.charCodeAt(0)) & 0xffffffff;
